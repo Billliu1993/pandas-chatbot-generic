@@ -1,0 +1,9 @@
+{
+    "TransactionId": "It contains unique Transactions ID",
+    "TransactionTime": "It contains Transaction Time",
+    "ItemCode": "It contains item code that item will be purchased",
+    "ItemDescription": "It contains Item description",
+    "NumberOfItemsPurchased": "It contains total number of items Purchased",
+    "CostPerItem": "Cost per item Purchased",
+    "Country": "Country where item purchased"
+  }

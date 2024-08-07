@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "pandas-chatbot-generic"
+version = "0.1.0"
+description = ""
+authors = ["Billliu1993"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+langchain-community = "^0.2.11"
+langchain = "^0.2.12"
+langchain-experimental = "^0.0.64"
+langchain-openai = "^0.1.20"
+jupyterlab = "^4.2.4"
+python-dotenv = "^1.0.1"
+pandas = "^2.2.2"
+tabulate = "^0.9.0"
+streamlit = "^1.37.1"
+chardet = "^5.2.0"
+plotly = "^5.23.0"
+matplotlib = "^3.9.0"
+numexpr = "^2.10.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
