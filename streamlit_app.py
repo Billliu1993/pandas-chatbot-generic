@@ -2,6 +2,7 @@ import pandas as pd
 import json
 import streamlit as st
 from dotenv import load_dotenv
+from datetime import datetime
 
 from langchain_openai import ChatOpenAI
 from langchain_core.messages import AIMessage, HumanMessage
@@ -54,8 +55,11 @@ def convert_chat_history(chat_history):
             converted_history.append({"role": "assistant", "text": message.content})
     return converted_history
 
+def convert_history_to_json(chat_history):
+    return json.dumps(chat_history, indent=4)
+    
 # Create columns for horizontal layout
-col1, col2 = st.columns([1, 1])
+col1, col2, col3 = st.columns([1, 1, 1])
 
 # Place buttons in columns
 with col1:
@@ -124,4 +128,12 @@ if st.session_state.clicked[1]:
                 except Exception as e:
                         st.error(f"An error occurred: {str(e)}")
 
+with col3:
+    st.download_button(
+        label="Download chat",
+        data=convert_history_to_json(convert_chat_history(st.session_state.chat_history)),
+        file_name='chat_history_%s.json' % datetime.now().strftime("%Y%m%d_%H%M%S"),
+        mime='application/json'
+    )
+    
 # streamlit run streamlit_app.py
